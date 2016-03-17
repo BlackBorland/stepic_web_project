@@ -1,5 +1,5 @@
 #!/usr/bin/python
-def app(environ, start_response):
+def application(environ, start_response):
     data = ''
     for line in environ["QUERY_STRING"].split("&"):
         data = data+line+"\n"
