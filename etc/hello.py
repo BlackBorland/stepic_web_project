@@ -1,8 +1,12 @@
-#!/usr/bin/python
-def application(environ, start_response):
-    data = ''
-    for line in environ["QUERY_STRING"].split("&"):
-        data = data+line+"\n"
-    start_response('200 OK', [('Content-Type', 'text/plain')])
-    return data
-    
+CONFIG = {
+    'mode': 'wsgi',
+    'working_dir': '/home/box/web',
+    # 'python': '/usr/bin/python',
+    'args': (
+        '--bind=0.0.0.0:8080',
+        '--daemon',
+        '--workers=2',
+        '--timeout=60',
+        'hello:app',
+    ),
+}
