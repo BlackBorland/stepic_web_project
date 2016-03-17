@@ -7,5 +7,3 @@ sudo /etc/init.d/nginx restart
 sudo ln -s /home/box/web/etc/gunicorn.conf   /etc/gunicorn.d/ask
 sudo /etc/init.d/gunicorn restart 
 
-
-python /home/box/web/ask/manage.py syncdb
