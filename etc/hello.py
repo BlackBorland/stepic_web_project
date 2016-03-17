@@ -1,4 +1,4 @@
-import cgi
+from cgi import parse_qs
 
 def application(environ, start_response):
 
